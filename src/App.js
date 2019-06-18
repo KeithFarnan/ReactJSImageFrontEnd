@@ -1,14 +1,13 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import SearchBar from "./SearchBar";
-import NavigationMenu from "./NavigationMenu";
+import NavigationMenu from "./Components/Layout/NavigationMenu";
+import SearchBar from "./Components/Layout/SearchBar";
 
 function App() {
   return (
     <div className="App">
       <SearchBar />
-
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
