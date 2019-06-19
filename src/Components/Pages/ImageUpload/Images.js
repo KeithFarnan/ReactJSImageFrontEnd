@@ -2,6 +2,11 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
+/**
+|--------------------------------------------------
+| This Code makes the images clickable and allows us to remove them if necessary
+|--------------------------------------------------
+*/
 export default props =>
   props.images.map((image, i) => (
     <div key={i} className="fadein">
