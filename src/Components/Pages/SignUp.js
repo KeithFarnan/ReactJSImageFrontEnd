@@ -6,6 +6,12 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 
+/**
+|--------------------------------------------------
+| This is a comment block for describing what the code does
+|--------------------------------------------------
+*/
+
 function SignUP() {
   return (
     <div>
