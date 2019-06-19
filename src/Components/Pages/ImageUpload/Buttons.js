@@ -2,6 +2,11 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImages, faImage } from "@fortawesome/free-solid-svg-icons";
 
+/**
+|--------------------------------------------------
+| This Code will display on the page for the user to upload the images to and they can select either to upload one image or multiple images 
+|--------------------------------------------------
+*/
 export default props => (
   <div className="buttons fadein">
     <div className="button">
