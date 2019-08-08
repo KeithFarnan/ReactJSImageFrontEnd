@@ -67,3 +67,5 @@ package-lock.json
 .vscode
 
 src/img
+
+package-lock.json
