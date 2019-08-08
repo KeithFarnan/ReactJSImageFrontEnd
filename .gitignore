@@ -65,3 +65,5 @@ package-lock.json
 
 # ignore vscode settings
 .vscode
+
+src/img
