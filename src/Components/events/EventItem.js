@@ -3,17 +3,16 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
-import { addLike, removeLike, deletePost } from '../../actions/post';
+import { deleteEvent } from '../../actions/event';
 
-const PostItem = ({
-  addLike,
-  removeLike,
-  deletePost,
+// the arrow function executes taking the params for EventItem
+const EventItem = ({
+  deleteEvent,
   auth,
-  post: { _id, text, name, avatar, user, likes, comments, date },
+  event: { _id, eventName, eventDate },
   showActions
 }) => (
-  <div className="post bg-white p-1 my-1">
+  <div className="event bg-white p-1 my-1">
     <div>
       <Link to={`/profile/${user}`}>
         <img className="round-img" src={avatar} alt="" />
@@ -22,8 +21,8 @@ const PostItem = ({
     </div>
     <div>
       <p className="my-1">{text}</p>
-      <p className="post-date">
-        Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
+      <p className="event-date">
+        Posted on <Moment format="YYYY/MM/DD">{eventDate}</Moment>
       </p>
 
       {showActions && (
@@ -64,24 +63,26 @@ const PostItem = ({
   </div>
 );
 
+// the default for  the showActions value is true
 PostItem.defaultProps = {
   showActions: true
 };
 
+// the types of each value is confirmed
 PostItem.propTypes = {
-  post: PropTypes.object.isRequired,
+  event: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
-  addLike: PropTypes.func.isRequired,
-  removeLike: PropTypes.func.isRequired,
-  deletePost: PropTypes.func.isRequired,
+  deleteEvent: PropTypes.func.isRequired,
   showActions: PropTypes.bool
 };
 
+// the value for authorization of the user is recieved from the redux state
 const mapStateToProps = state => ({
   auth: state.auth
 });
 
+// the connection to the redux state object is executed
 export default connect(
   mapStateToProps,
-  { addLike, removeLike, deletePost }
-)(PostItem);
+  { deleteEvent }
+)(EventItem);
