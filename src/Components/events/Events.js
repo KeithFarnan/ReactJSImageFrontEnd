@@ -19,7 +19,8 @@ const Events = ({ getEvents, event: { Events, loading } }) => {
     <Fragment>
       <h1 className="large text-primary">Events</h1>
       <p className="lead">
-        <i className="fas fa-user" /> Welcome to the community
+        <i className="fas fa-user" />
+        Welcome have a look at the events you can see
       </p>
       <EventForm />
       {/* the form is populated with the values that are recieved from the events api call */}
