@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import DashboardActions from './DashboardActions';
 
-const Dashboard = ({ auth: { user } }) => {
+const Dashboard = ({ auth: { user, loading } }) => {
   useEffect(() => []);
 
   // if the loading state is null then return the spinner else return the fragments of the code
@@ -19,19 +19,6 @@ const Dashboard = ({ auth: { user } }) => {
         {/* prints a welcome with the user name to the page */}
         <i className="fas fa-user" /> Welcome {user && user.name}
       </p>
-
-      {user !== null ? (
-        <Fragment>
-          <DashboardActions />
-        </Fragment>
-      ) : (
-        <Fragment>
-          <p>You have not yet setup a profile, please add some info</p>
-          <Link to="/create-profile" className="btn btn-primary my-1">
-            Create Profile
-          </Link>
-        </Fragment>
-      )}
     </Fragment>
   );
 };

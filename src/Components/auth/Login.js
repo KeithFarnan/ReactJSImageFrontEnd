@@ -29,7 +29,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   // if the user is already signed in redirect them to the dashboard page
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/gallery" />;
   }
 
   return (

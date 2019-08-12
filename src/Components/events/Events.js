@@ -26,8 +26,8 @@ const Events = ({ getEvents, event: { Events, loading } }) => {
       {/* the form is populated with the values that are recieved from the events api call */}
       <div className="events">
         {/* The values are mapped over the array of events and the event id is used as the key and event object is passed into the event variable */}
-        {events.map(event => (
-          <EventItem key={event._id} event={event} />
+        {/* {events.map(event => ( */}
+          {/* <EventItem key={event._id} event={event} /> */}
         ))}
       </div>
     </Fragment>

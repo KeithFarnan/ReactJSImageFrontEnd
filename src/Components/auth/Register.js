@@ -35,7 +35,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   // if the user is already authenticated redirect them to the dashboard page
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/gallery" />;
   }
 
   return (
@@ -52,7 +52,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             placeholder="Name"
             name="name"
             value={name}
-            // calling the onChange method to be executed each time the user types into the box
+/**
+|--------------------------------------------------
+calling the onChange method to be executed each time the user types into the box
+| 
+|--------------------------------------------------
+*/ 
             onChange={e => onChange(e)}
           />
         </div>

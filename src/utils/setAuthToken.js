@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // the set auth token arrow function takes the token and puts it into the headers.common for the user
-export default setAuthToken = token => {
+const setAuthToken = token => {
   if (token) {
     axios.defaults.headers.common['x-auth-token'] = token;
   } else {
@@ -9,3 +9,5 @@ export default setAuthToken = token => {
     delete axios.defaults.headers.common['x-auth-token'];
   }
 };
+
+export default setAuthToken
