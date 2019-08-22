@@ -5,13 +5,14 @@ import Spinner from '../layout/Spinner';
 import EventItem from './EventItem';
 import EventForm from './EventForm';
 import { getEvents } from '../../actions/event';
+import Gallery from 'react-photo-gallery';
 
 // the value of Events takes in the
-const Events = ({ getEvents, event: { Events, loading } }) => {
+const Events = ({ getEvents, event: { events, loading } }) => {
   useEffect(() => {
     getEvents();
   }, [getEvents]);
-
+  
   // if the application is loading the spinner is shown else the code in the fragment executes
   return loading ? (
     <Spinner />
@@ -22,14 +23,9 @@ const Events = ({ getEvents, event: { Events, loading } }) => {
         <i className="fas fa-user" />
         Welcome have a look at the events you can see
       </p>
-      <EventForm />
-      {/* the form is populated with the values that are recieved from the events api call */}
-      <div className="events">
-        {/* The values are mapped over the array of events and the event id is used as the key and event object is passed into the event variable */}
-        {/* {events.map(event => ( */}
-          {/* <EventItem key={event._id} event={event} /> */}
-        ))}
-      </div>
+      {events.map(event => (
+          <EventItem key={event._id} event={event} /> 
+          ))}
     </Fragment>
   );
 };
