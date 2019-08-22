@@ -7,7 +7,7 @@ import Dashboard from '../dashboard/Dashboard';
 import Events from '../events/Events';
 import Event from '../event/Event';
 import NotFound from '../layout/NotFound';
-import PrivateRoute from './PrivateRoute';
+// import PrivateRoute from './PrivateRoute';
 import ImageGallery from '../dashboard/ImageGallery';
 
 const Routes = () => {
@@ -17,10 +17,10 @@ const Routes = () => {
       <Switch>
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
-        <PrivateRoute exact path="/dashboard" component={Dashboard} />
-        <PrivateRoute exact path="/gallery" component={ImageGallery} />
-        <PrivateRoute exact path="/events" component={Events} />
-        <PrivateRoute exact path="/events/:id" component={Event} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/gallery" component={ImageGallery} />
+        <Route exact path="/events" component={Events} />
+        <Route exact path="/events/:id" component={Event} />
         <Route component={NotFound} />
       </Switch>
     </section>
